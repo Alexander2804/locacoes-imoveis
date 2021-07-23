@@ -48,19 +48,4 @@
             </ div >
             < div  class = " row " >
                 < div  class = " col " >
-                    < label  for = " loc_fun_codigo " > Funcionário </ label >
-                    < select  name = " loc_fun_codigo " class = " form-control " >
-                    <? php  while ( $ funcionario = $ queryFuncionarios -> fetch ( PDO :: FETCH_ASSOC )) { ?>
-                        < option  value = " <? php  echo  $ funcionario [ 'FUN_CODIGO' ]; ?> " >
-                            <? php  echo  $ funcionario [ 'FUN_FUNCIONARIO' ]; ?>
-                        </ opção >
-                    <? php } ?>
-                    </ select >
-                </ div >
-            </ div >
-        </ div >
-        < div  class = " card-footer " >
-            < input  type = " submit " class = " btn btn-primary " value = " Cadastrar " >
-        </ div >
-    </ div >
-</ form > 
+                   
