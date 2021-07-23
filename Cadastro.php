@@ -1,7 +1,7 @@
 <? php
     inclui  $ _SERVER [ 'DOCUMENT_ROOT' ]. '/locadora/app/db/conexao.php' ;
 
-    $ queryImovel        = $ conexao -> query ( "SELECT IMOVEL_CODIGO, IMOVEL_MODELO FROM TB_IMOVEL WHERE CAR_DISPONIVEL = 's'" );
+    $ queryImovel        = $ conexao -> query ( "SELECT IMOVEL_CODIGO, IMOVEL_MODELO FROM TB_IMOVEL WHERE IMOVEL_DISPONIVEL = 's'" );
     $ queryClientes       = $ conexao -> query ( "SELECT CLI_CODIGO, CLI_NOME FROM TB_CLIENTES" );
     $ queryFuncionarios   = $ conexao -> query ( "SELECT FUN_CODIGO, FUN_FUNCIONARIO FROM TB_FUNCIONARIOS WHERE FUN_DATA_DEMISSAO IS NULL" );
 ?>
