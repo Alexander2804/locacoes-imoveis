@@ -1,0 +1,48 @@
+<? php
+    inclui  $ _SERVER [ 'DOCUMENT_ROOT' ]. '/locadora/app/db/conexao.php' ;
+    $ query = $ conexao -> query ( "SELECT LOC_CODIGO, LOC_DATA_LOCACAO, IMOVEL_MODELO, CLI_NOME, FUN_FUNCIONARIO DE VW_LOCACOES WHERE LOC_DATA_ENTREGA IS NULL" );
+?>
+
+< div  class = " imovel " >
+    < div  class = " imovel-header " >
+        Locações em andamento
+    </ div >
+    < table  class = " table table-hover table-stripes table-bordered " >
+        < thead >
+            < tr >
+                < th > Código </ th >
+                < th > Data da locação </ th >
+                < th > Imovel </ th >
+                < th > Cliente </ th >                           
+                < th > </ th >
+            </ tr >
+        </ thead >
+        < tbody >
+            <? php  while ( $ locacao = $ query -> fetch ( PDO :: FETCH_ASSOC )) { ?>
+                < tr >
+                    < td >
+                        <? php  echo  $ locacao [ 'LOC_CODIGO' ]; ?>
+                    </ td >
+                    < td >
+                        <? php  echo  $ locacao [ 'LOC_DATA_LOCACAO' ]; ?>
+                    </ td >
+                    < td >
+                        <? php  echo  $ locacao [ 'IMOVEL_MODELO' ]; ?>
+                    </ td >
+                    < td >
+                        <? php  echo  $ locacao [ 'CLI_NOME' ]; ?>
+                    </ td >
+                    < td >
+                        <? php  echo  $ locacao [ 'FUN_FUNCIONARIO' ]; ?>
+                    </ td >
+                    < td >
+                        < a  href = <? php  echo  "/locadora/?pagina=app/paginas/locacoes/edicao.php&loc_codigo={$locacao['LOC_CODIGO ']}" ; ?>  class = "btn btn-primary btn-sm" > Editar </ a >
+                    </ td >
+                </ tr >
+            <? php } ?>
+        </ tbody >
+    </ mesa >
+    < div  class = " card-footer " >
+        < a  href = <? php  echo  "/locadora/?pagina=app/paginas/locacoes/cadastro.php" ; ?>  class = "btn btn-primary btn-sm" > Nova locação </ a >
+    </ div >
+</ div > 
