@@ -3,32 +3,32 @@
 
     $ queryImovel        = $ conexao -> query ( "SELECT IMOVEL_CODIGO, IMOVEL_MODELO FROM TB_IMOVEL WHERE IMOVEL_DISPONIVEL = 's'" );
     $ queryClientes       = $ conexao -> query ( "SELECT CLI_CODIGO, CLI_NOME FROM TB_CLIENTES" );
-    $ queryFuncionarios   = $ conexao -> query ( "SELECT FUN_CODIGO, FUN_FUNCIONARIO FROM TB_FUNCIONARIOS WHERE FUN_DATA_DEMISSAO IS NULL" );
+   
 ?>
 
 < form  action = " /locadora/app/funcoes/locacoes/cadastrar.php " method = " post " >
-    < div  class = " card " >
-        < div  class = " card-header " >
+    < div  class = " imovel " >
+        < div  class = " imovel-header " >
             Cadastrar locação
         </ div >
-        < div  class = " card-body " >
+        < div  class = " imovel-body " >
             < div  class = " row " >
                 < div  class = " col " >
                     < label  for = " loc_data_locacao " > Dados da locação </ label >
-                    < input  type = " date " value = "" class = " form-control " name = " loc_data_locacao " autofocus > 
+                    < input  type = " date " value = "" class = " form-control " name = " loc_data_locacao " imovelfocus > 
                 </ div >
                 < div  class = " col " >
                     < label  for = " loc_odometro_inicial " > Odômetro inicial </ label >
-                    < input  type = " number " value = "" class = " form-control " name = " loc_odometro_inicial " autofocus > 
+                    < input  type = " number " value = "" class = " form-control " name = " loc_odometro_inicial " imovelfocus > 
                 </ div >
             </ div >
             < div  class = " row " >
                 < div  class = " col " >
-                    < label  for = " loc_imovel_codigo " > Carro </ label >
+                    < label  for = " loc_imovel_codigo " > Imovel </ label >
                     < select  name = " loc_imovel_codigo " class = " form-control " >
                     <? php  while ( $ imovel = $ queryImovel -> fetch ( PDO :: FETCH_ASSOC )) { ?>
                         < option  value = " <? php  echo  $ imovel [ 'Imovel_CODIGO' ]; ?> " >
-                            <? php  echo  $ imovel [ 'Imovel_MODELO' ]; ?>
+                            <? php  echo  $ imovel [ 'IMOVEL_MODELO' ]; ?>
                         </ opção >
                     <? php } ?>
                     </ select >
